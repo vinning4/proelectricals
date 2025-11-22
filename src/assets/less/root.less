@@ -13,10 +13,10 @@
 @media only screen and (min-width: 0rem) {
     /* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     :root {
-        --primary: #ff6a3e;
-        --primaryLight: #ffba43;
-        --secondary: #ffba43;
-        --secondaryLight: #ffba43;
+        --primary: #0b8d3c;
+        --primaryLight: #4cd07e;
+        --secondary: #2cff7d;
+        --secondaryLight: #8eff98;
         --headerColor: #1a1a1a;
         --bodyTextColor: #4e4b66;
         --bodyTextColorWhite: #fafbfc;
@@ -86,7 +86,8 @@
         line-height: 1.5em;
         text-align: inherit;
         width: 100%;
-        max-width: 40.625rem;
+        //max-width: 40.625rem;
+        max-width: 75%;
         margin: 0;
         color: var(--bodyTextColor);
     }
@@ -327,84 +328,7 @@
     }
 }
 
-/*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
 
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #dark-mode-toggle {
-            .cs-sun {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-
-            .cs-moon {
-                opacity: 0;
-                transform: translate(-50%, -150%);
-                fill: #fff;
-            }
-        }
-    }
-
-    #dark-mode-toggle {
-        width: (48/16rem);
-        height: (48/16rem);
-        padding: 0;
-        background: transparent;
-        border: none;
-        display: block;
-        position: absolute;
-        top: (10/16rem);
-        right: (70/16rem);
-        z-index: 1000;
-        overflow: hidden;
-
-        img,
-        svg {
-            width: (20/16rem);
-            height: (20/16rem);
-            //center image inside button
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-
-        .cs-moon {
-            z-index: 2;
-            // Transition properties
-            transition: transform 0.3s, opacity 0.3s;
-
-            // fill: yellow; --> uncomment to change the color of the moon if needed
-        }
-
-        .cs-sun {
-            opacity: 0;
-            z-index: 1;
-            // Transition property
-            transform: translate(-50%, 100%);
-            transition: transform 0.3s, opacity 0.3s;
-        }
-    }
-}
-
-/* Desktop - 1024px */
-@media only screen and (min-width: 1024px) {
-    #dark-mode-toggle {
-        margin: 0;
-        position: relative;
-        top: auto;
-        right: auto;
-        transform: none;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
@@ -904,31 +828,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #cs-navigation {
-            .cs-drop-ul {
-                background-color: var(--dark);
-            }
-
-            .cs-li-link {
-                &.cs-drop-link {
-                    background-color: var(--medium);
-
-                    &:hover {
-                        background-color: var(--light);
-                    }
-                }
-            }
-
-            .cs-drop-icon {
-                /* turns it white */
-                filter: grayscale(1) brightness(1000%);
-            }
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---     Desktop Navigation     -->
@@ -1036,222 +935,9 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 1024px) {
-    body.dark-mode {
-        #cs-navigation {
-            background-color: var(--dark);
 
-            .cs-logo {
-                /* makes it turn white */
-                filter: grayscale(1) brightness(1000%);
-            }
 
-            .cs-li-link {
-                color: var(--bodyTextColorWhite);
-            }
 
-            .cs-li-link {
-                &:before {
-                    background-color: var(--primaryLight);
-                }
-            }
-        }
-    }
-}
-
-/*-- -------------------------- -->
-<---          Banner            -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #banner-310 {
-        /* 144px - 252px */
-        padding-top: clamp(9rem, 25vw, 15.75rem);
-        /* 80px - 140px */
-        padding-bottom: clamp(5rem, 13vw, 8.75rem);
-        position: relative;
-        z-index: 1;
-
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .cs-int-title {
-            /* 39px - 49px */
-            font-size: clamp(2.4375rem, 4.5vw, 3.0625rem);
-            font-weight: 900;
-            line-height: 1.2em;
-            text-align: center;
-            max-width: (700/16rem);
-            margin: 0 auto (12/16rem);
-            color: var(--bodyTextColorWhite);
-            position: relative;
-        }
-
-        .cs-breadcrumbs {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-link {
-            /* 14px - 16px */
-            font-size: clamp(0.875rem, 1.5vw, 1rem);
-            line-height: 1.2em;
-            text-decoration: none;
-            color: var(--bodyTextColorWhite);
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:last-of-type {
-                /* remove the chevron on the last list item */
-                &::after {
-                    display: none;
-                }
-            }
-
-            &:after {
-                /* chevron - added as pseudo to make adding and removing them easier */
-                content: "";
-                width: (7/16rem);
-                height: (12/16rem);
-                margin-left: (12/16rem);
-                margin-right: (12/16rem);
-                background: url("/assets/svgs/chevron.svg");
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            &.cs-active {
-                color: var(--primaryLight);
-            }
-        }
-
-        .cs-background {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            z-index: -1;
-
-            &:before {
-                /* black overlay box */
-                content: "";
-                width: 100%;
-                height: 100%;
-                background: #000;
-                opacity: 0.72;
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-}
-
-/*-- -------------------------- -->
-<---            CTA             -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-    #cta-51 {
-        padding: var(--sectionPadding);
-        position: relative;
-
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
-        }
-
-        .cs-content {
-            /* set text align to left if content needs to be left aligned */
-            text-align: center;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: center;
-        }
-
-        .cs-title {
-            color: var(--bodyTextColorWhite);
-        }
-
-        .cs-text {
-            margin-bottom: (16/16rem);
-            color: var(--bodyTextColorWhite);
-            opacity: 0.8;
-            &:last-of-type {
-                margin-bottom: (32/16rem);
-            }
-        }
-
-        .cs-picture {
-            height: 100%;
-            width: 100%;
-            display: block;
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            z-index: -1;
-
-            &:before {
-                /* black color overlay */
-                content: "";
-                position: absolute;
-                display: block;
-                height: 100%;
-                width: 100%;
-                background: #000;
-                opacity: 0.8;
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-}
 
 /*-- -------------------------- -->
 <---          Footer            -->
@@ -1261,7 +947,7 @@
 @media only screen and (min-width: 0rem) {
     #cs-footer-275 {
         padding: var(--sectionPadding);
-        background-color: #1a1a1a;
+        background-color: #313131;
 
         .cs-container {
             width: 100%;
@@ -1295,14 +981,21 @@
             width: 100%;
             height: auto;
 
+            /*
             &.dark {
                 display: none;
-            }
+            } */
         }
 
         .cs-text {
             color: var(--bodyTextColorWhite);
+            font-size: 0.9rem;
             margin-bottom: (16/16rem);
+            max-width: none;
+
+                a { /* V added */
+                    color: #fff;
+                }
         }
 
         .cs-social {

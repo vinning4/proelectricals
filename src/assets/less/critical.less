@@ -6,7 +6,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
-<---           Hero             -->
+<---      Hero - CS 143        -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
@@ -15,9 +15,8 @@
         /* Centers button */
         text-align: center;
         /* 144px - 300px - leaving extra space for the navigation */
-        padding: clamp(9rem, 25.95vw, 18.75rem) (16/16rem) 0;
+        padding: clamp(5rem, 15vw, 9rem) (16/16rem) clamp(12rem, 26vw, 26rem);
         /* 130px - 450px */
-        padding-bottom: clamp(12.125rem, 30.95vw, 28.125rem);
         position: relative;
         z-index: 1;
         /* Prevents white rectangle pseudos from overlapping the sections below */
@@ -37,7 +36,7 @@
             display: block;
             bottom: (-2235/16rem);
             /* this makes the right edge sit at the 50% line at all times */
-            right: 50%;
+            right: 18%;
             z-index: 0;
         }
 
@@ -54,7 +53,7 @@
             display: block;
             bottom: (-2235/16rem);
             /* this makes the left edge sit at the 50% line at all times */
-            left: 50%;
+            left: 18%;
             z-index: 0;
         }
 
@@ -140,6 +139,15 @@
             margin-bottom: clamp(2.5rem, 4vw, 3rem);
             color: #fff;
         }
+
+        .cs-button-solid { /* V added */
+            &:hover {
+                color: #000;
+            }
+            &:before {
+                background-color: #fff;
+            }
+        }
     }
 }
 
@@ -161,7 +169,7 @@
     }
 }
 
-/* Dark Mode */
+/* Dark Mode 
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #hero-143 {
@@ -177,10 +185,10 @@
             }
         }
     }
-}
+} */
 
 /*-- -------------------------- -->
-<---         Services           -->
+<--- Hero 4-feature strip - h-Services-143  -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
@@ -201,10 +209,13 @@
             to make the value negative since clamp doesn't work with negative values */
             margin-top: ~"calc(clamp(5rem, 13vw, 4.75rem)*-1)";
             /* 40px - 60px top and bottom, 16px - 44px left & right */
-            padding: clamp(2.5rem, 4.7vw, 3.75rem) clamp(1rem, 5.3vw, 2.75rem);
+            //padding: clamp(2rem, 2vw, 4rem) clamp(1rem, 5.3vw, 2.75rem);
+            padding: clamp(2rem, 2vw, 3rem) clamp(1rem, 5.3vw, 2.75rem) clamp(1rem, 2.5vw, 1.2rem) clamp(1rem, 5.3vw, 2.75rem);
+            /* bottom padding: 16px scaling to 19.2px max ↑ */
             box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.05);
             border-radius: (5/16rem);
             border-top: 8px solid var(--primary);
+            border-bottom: 8px solid var(--primary);
             background-color: #fff;
             /* prevents padding and border from affecting height and width */
             box-sizing: border-box;
@@ -287,6 +298,15 @@
     }
 }
 
+/* V created this for h-services-143 top & bottom gap issue */
+@media only screen and (min-width: 48rem) and (max-width: 81.24rem) {
+    #h-services-143 .cs-card-group {
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+    }
+}
+
+
 /* Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
     #h-services-143 {
@@ -304,7 +324,7 @@
     }
 }
 
-/* Dark Mode */
+/* Dark Mode
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #h-services-143 {
@@ -325,4 +345,4 @@
             }
         }
     }
-}
+} */

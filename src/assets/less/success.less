@@ -1,0 +1,57 @@
+.success-page {       
+    padding-top: 12rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: center;
+    background-color: #515151;
+    min-height: 70vh; // Ensures page doesn't look too short
+    
+    h1 {
+        color: #7ccd25; // Keep your green success color
+        margin-bottom: 2rem;
+        font-size: clamp(1.5rem, 4vw, 2rem); // Responsive sizing
+    }
+    
+    .cs-main-text {
+        font-size: 1.25rem;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+    
+    .cs-sub-text {
+        font-size: 1.05rem;
+        color: #e3e3e3; // Slightly dimmed
+        margin-bottom: 3rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    // Button group for multiple CTAs
+    .cs-button-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap; // Stacks on mobile if needed
+    }
+    .cs-button-solid {
+        color: #fff;
+    }
+    
+    // Optional: Style for outline button if you want variety
+    .cs-button-outline {
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+        border-radius: (4/16rem); /* added from root.less, used for cs-button-solid */
+    }
+}

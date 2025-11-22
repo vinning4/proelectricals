@@ -1,0 +1,36 @@
+---
+title: "Thanks for reaching out! | ProElectricals"
+description: "Your message has been received. I'll get back to you within 2 hours."
+permalink: "/success/"
+---
+{% extends "layouts/base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/success.css">
+    
+{% endblock %}
+{% block body %}
+
+<!--     << not using this minimalist version for now.
+<div class="success-page">
+    <h1>Success!</h1>
+    <p>Form submitted. You will hear back soon.</p>
+    <a href="/" class="cs-button-solid">Back to Homepage</a>
+</div>
+-->
+
+<div class="success-page">
+    <h1>Message received!</h1>
+    <p class="cs-main-text">
+        Thanks for reaching out! I'll get back to you within 2 hours.
+    </p>
+    <p class="cs-sub-text">
+        In the meantime, check out my services or customer reviews!
+    </p>
+    
+    <div class="cs-button-group">
+        <a href="/#services-341" class="cs-button-solid">Services</a>
+        <a href="/#reviews-399" class="cs-button-outline">Reviews</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -100,3 +100,67 @@ document.addEventListener("keydown", (event) => {
         toggleMenu();
     }
 });
+
+
+// Claude addition (works well!): 
+
+// ========================================
+// SCROLL-BASED ACTIVE NAV LINK
+// ========================================
+
+// Function to update active nav link based on scroll position
+function updateActiveNavOnScroll() {
+    // Find all sections with IDs on the page
+    const sections = document.querySelectorAll('section[id], div[id]');
+    
+    // Find all navigation links
+    const navLinks = document.querySelectorAll('.cs-li-link');
+    
+    // Variable to store the ID of the current section in view
+    let currentSection = '';
+    
+    // Loop through each section to check if it's in view
+    sections.forEach(section => {
+        // Get the section's position from the top of the page
+        const sectionTop = section.offsetTop;
+        
+        // Get the section's height
+        const sectionHeight = section.clientHeight;
+        
+        // Check if we've scrolled past this section (with 100px offset for header)
+        if (window.scrollY >= (sectionTop - 150)) {
+            // Save this section's ID as the current section
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    // Update the active class on navigation links
+    navLinks.forEach(link => {
+        // Remove active class from all links first
+        link.classList.remove('cs-active');
+        
+        // Get the link's href attribute (e.g., "/#services-341")
+        const linkHref = link.getAttribute('href');
+        
+        // Build the expected href from the current section ID
+        const expectedHref = `/#${currentSection}`;
+        
+        // If the link matches the current section, make it active
+        if (linkHref === expectedHref) {
+            link.classList.add('cs-active');
+        }
+        
+        // Special case: If at the top of the page, activate the Home link
+        if (window.scrollY < 100 && linkHref === '/') {
+            link.classList.add('cs-active');
+        }
+    });
+}
+
+// Listen for scroll events and update active link
+window.addEventListener('scroll', updateActiveNavOnScroll);
+
+// Run the function once when page loads to set initial active link
+updateActiveNavOnScroll();
+
+// Claude addition end.
