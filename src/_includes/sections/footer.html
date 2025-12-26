@@ -50,7 +50,7 @@
                 <span class="cs-header">Office</span>
             </li>
             <li class="cs-contact-li">
-                <a class="cs-contact-link cs-address" rel="noopener">
+                <a class="cs-contact-link cs-address" rel="noopener" href="https://maps.app.goo.gl/Cfvomf5VLyBCdAmz9" target="_blank">
                     {{ client.address.lineOne }}, <br>
                     {{ client.address.lineTwo }}, <br>
                     {{ client.address.city }}, {{ client.address.state }}
@@ -58,12 +58,12 @@
                 </a>
             </li>
             <li class="cs-contact-li">
-                <a class="cs-contact-link">{{ client.phoneFormatted }}</a>
+                <a class="cs-contact-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
             </li>
-            <!-- Above line, to open tel calling applic on clicking tel, use this: href="tel:{{ client.phoneForTel }}" -->
+            <!-- Above line, to open tel calling applic on clicking tel, add attribute: href="tel:{{ client.phoneForTel }}" -->
             <li class="cs-contact-li">
-                <a class="cs-contact-link">{{ client.email }}</a>
-                <!-- Above line, to open mail client on clicking email, use this: href="mailto:{{ client.email }}" -->
+                <a class="cs-contact-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
+                <!-- Above line, to open mail client on clicking email, add attribute: href="mailto:{{ client.email }}" -->
             </li>
         </ul>
     </div>
