@@ -914,7 +914,6 @@
 
 
 
-
 /*-- -------------------------- -->
 <---          Footer            -->
 <--- -------------------------- -*/
@@ -1073,12 +1072,12 @@
         .cs-contact {
             margin: 0;
             padding: 0;
-            width: 35%;
+            width: 45%;
         }
 
         .cs-contact-li {
             list-style: none;
-            margin-bottom: (0/16rem);
+            margin-bottom: (12/16rem);
             &:last-of-type {
                 margin-bottom: 0;
             }
@@ -1091,6 +1090,9 @@
             text-align: left;
             color: var(--bodyTextColorWhite);
             display: inline-block;
+            overflow-wrap: break-word; /* Modern standard property. Note: Only add word-wrap/overflow-wrap to elements with unbreakable strings like emails, URLs. */
+            word-wrap: break-word; /* Legacy alias for older browsers */
+            width: 100%;
 
             &:hover {
                 text-decoration: underline;
