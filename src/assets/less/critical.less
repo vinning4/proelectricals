@@ -106,7 +106,7 @@
             text-align: center;
             max-width: (829/16rem);
             /* 16px - 24px */
-            margin: 0 auto clamp(1rem, 4vw, 1.5rem);
+            margin: 10% auto clamp(1rem, 4vw, 1.5rem);
             color: #fff;
             position: relative;
 
@@ -151,6 +151,15 @@
     }
 }
 
+/* Small desktop - 1024px - V added  */
+@media only screen and (min-width: 64rem) {
+    #hero-143 {
+        .cs-title {      // V added. Top margin 10% for mobile, here zero.
+            margin: 0 auto clamp(1rem, 4vw, 1.5rem);
+        }
+    }
+}
+
 /* Desktop - 1300px (To make image background parallax) */
 @media only screen and (min-width: 81.25rem) {
     #hero-143 {
@@ -166,26 +175,14 @@
                 display: none;
             }
         }
+
+        .cs-title {   // V added. Top margin 10% for mobile, here zero.
+            margin: 0 auto clamp(1rem, 4vw, 1.5rem);
+        }
     }
 }
 
-/* Dark Mode 
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #hero-143 {
-            &:before,
-            &:after {
-                background: var(--dark);
-            }
 
-            .cs-background {
-                &:before {
-                    opacity: 0.85;
-                }
-            }
-        }
-    }
-} */
 
 /*-- -------------------------- -->
 <--- Hero 4-feature strip - h-Services-143  -->
